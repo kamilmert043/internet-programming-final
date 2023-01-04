@@ -363,28 +363,22 @@ if (isset($_POST['kullanicigiris'])) {
 }
 
 if (isset($_POST['genelayarkaydet'])) {
-	
+
 	$ayarkaydet=$db->prepare("UPDATE ayar SET
-		hakkimizda_baslik=:hakkimizda_baslik,
-		hakkimizda_icerik=:hakkimizda_icerik,
-		hakkimizda_video=:hakkimizda_video,
-		hakkimizda_misyon=:hakkimizda_misyon
+		ayar_title=:ayar_title,
+		ayar_description=:ayar_description,
+		ayar_keywords=:ayar_keywords,
+		ayar_author=:ayar_author
 		WHERE ayar_id=0");
-
 	$update=$ayarkaydet->execute(array(
-		'hakkimizda_baslik' => $_POST['hakkimizda_baslik'],
-		'hakkimizda_icerik' => $_POST['hakkimizda_icerik'],
-		'hakkimizda_video' => $_POST['hakkimizda_video'],
-		'hakkimizda_misyon' => $_POST['hakkimizda_misyon']
-	));
-
-
+		'ayar_title' => $_POST['ayar_title'],
+		'ayar_description' => $_POST['ayar_description'],
+		'ayar_keywords' => $_POST['ayar_keywords'],
+		'ayar_author' => $_POST['ayar_author']
+		));
 	if ($update) {
-
 		header("Location:../production/genel-ayar.php?durum=ok");
-
 	} else {
-
 		header("Location:../production/genel-ayar.php?durum=no");
 	}
 	
