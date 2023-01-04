@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 include '../netting/baglan.php';
+include 'fonksiyon.php';
 
 $ayarsor=$db->prepare("SELECT * FROM ayar where ayar_id=:id");
 $ayarsor->execute(array(
@@ -57,6 +58,8 @@ if ($say==0) {
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="../vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
+    <script src="../vendors/dropzone/dist/min/dropzone.min.js"></script>
   </head>
 
   <body class="nav-md">
@@ -94,6 +97,12 @@ if ($say==0) {
                 <li><a href="index.php"><i class="fa fa-home"></i> Anasayfa</a></li>
                 <li><a href="hakkimizda.php"><i class="fa fa-info"></i> Hakkımızda</a></li>
                 <li><a href="kullanici.php"><i class="fa fa-user"></i> Kullanıcılar</a></li>
+                <li><a href="urun.php"><i class="fa fa-shopping-basket"></i> Ürünler</a></li>
+                <li><a href="menu.php"><i class="fa fa-list"></i> Menüler</a></li>
+                <li><a href="kategori.php"><i class="fa fa-list"></i> Kategoriler</a></li>
+                <li><a href="slider.php"><i class="fa fa-image"></i> Slider</a></li>
+                <li><a href="yorum.php"><i class="fa fa-comments"></i> Yorumlar </a></li>
+                <li><a href="banka.php"><i class="fa fa-bank"></i> Bankalar </a></li>
                   <li><a><i class="fa fa-cogs"></i> Ayarlar <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="genel-ayar.php">Genel Ayarlar</a></li>

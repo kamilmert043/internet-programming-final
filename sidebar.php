@@ -1,27 +1,19 @@
+<?php $kategorisor=$db->prepare("SELECT * FROM kategori order by kategori_sira ASC");
+$kategorisor->execute(); ?>
+
 <div class="col-md-3"><!--sidebar-->
 				<div class="title-bg">
-					<div class="title">Categories</div>
+					<div class="title">Kategoriler</div>
 				</div>
 				
 				<div class="categorybox">
 					<ul>
-						<li><a href="category.htm">Women Accessories</a></li>
-						<li><a href="category.htm">Men Shoes</a></li>
-						<li><a href="category.htm">Gift Specials</a></li>
-						<li><a href="category.htm">Electronics</a>
-							<ul>
-								<li><a href="#">iPhone 4S</a></li>
-								<li><a href="#">Samsung Galaxy</a></li>
-								<li><a href="#">MacBook Pro 17"</a></li>
-							</ul>
-						</li>
-						<li><a href="category.htm">On sale</a></li>
-						<li><a href="category.htm">Summer Specials</a></li>
-						<li><a href="category.htm">Electronics</a></li>
-						<li class="lastone"><a href="category.htm">Unique Stuff</a></li>
+					<?php while($kategoricek=$kategorisor->fetch(PDO::FETCH_ASSOC)){ $say++?>
+						<li><a href="kategori-<?=seo($kategoricek["kategori_ad"]) ?>"><?php echo $kategoricek['kategori_ad']; ?></a></li>
+					<?php } ?>
 					</ul>
 				</div>
-				
+				<!--
 				<div class="ads">
 					<a href="product.htm"><img src="images\ads.png" class="img-responsive" alt=""></a>
 				</div>
@@ -54,5 +46,5 @@
 						</li>
 					</ul>
 				</div>
-				
+-->
 			</div><!--sidebar-->

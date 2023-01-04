@@ -58,7 +58,6 @@ if (isset($_GET['durum'])=="ok") {?>
           <div class="x_content">
             <br />
 
-            <!-- / => en kök dizine çık ... ../ bir üst dizine çık -->
             <form action="../netting/islem.php" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
           
@@ -119,40 +118,9 @@ if (isset($_GET['durum'])=="ok") {?>
                  <select id="heard" class="form-control" name="kullanici_durum" required>
 
 
-
-                   <!-- Kısa İf Kulllanımı 
-
                     <?php echo $kullanicicek['kullanici_durum'] == '1' ? 'selected=""' : ''; ?>
-
-                  -->
-
-
-
-
                   <option value="1" <?php echo $kullanicicek['kullanici_durum'] == '1' ? 'selected=""' : ''; ?>>Aktif</option>
-
-
-
                   <option value="0" <?php if ($kullanicicek['kullanici_durum']==0) { echo 'selected=""'; } ?>>Pasif</option>
-                  <!-- <?php 
-
-                   if ($kullanicicek['kullanici_durum']==0) {?>
-
-
-                   <option value="0">Pasif</option>
-                   <option value="1">Aktif</option>
-
-
-                   <?php } else {?>
-
-                   <option value="1">Aktif</option>
-                   <option value="0">Pasif</option>
-
-                   <?php  }
-
-                   ?> -->
-
-
                  </select>
                </div>
              </div>

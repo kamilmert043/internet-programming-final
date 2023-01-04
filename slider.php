@@ -11,19 +11,10 @@ while($slidercek=$slidersor->fetch(PDO::FETCH_ASSOC)) {
 					<div class="slide-desc">
 						<div class="inner">
 							<h1><?php echo $slidercek['slider_ad'];?></h1>
-							<p>
-								Nunc non fermentum nunc. Sed ut ante eget leo tempor consequat sit amet eu orci. Donec dignissim dolor eget..
-							</p>
-							<button class="btn btn-default btn-red btn-  ff  lg">Add to cart</button>
+
 						</div>
 						<div class="inner">
-							<div class="pro-pricetag big-deal">
-								<div class="inner">
-										<span class="oldprice">$314</span>
-										<span>$199</span>
-										<span class="ondeal">Best Deal</span>
-								</div>
-							</div>
+
 						</div>
 					</div>
 					<div class="slide-type-1">
